@@ -1,8 +1,10 @@
 <h3> All Genres </h3>
 
-<% @genres.map do |genre| %>
-<p> <%= genre.id %> </p>
-<p> <%= genre.name %> </p>
-<p> <%= genre.created_at %> </p>
-<p> <%= genre.updated_at %> </p>
-<% end %>
+<div id="genres">
+  <% @genres.each do |genre| %>
+    <h1><%= genre.name %></h1>
+    <% genre.films.each do |film| %>
+      <h3><%= film.title %></h3>
+    <% end %>
+  <% end %>
+</div>
